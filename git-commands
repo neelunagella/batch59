@@ -1,0 +1,50 @@
+git init ( initialize empty git rep)
+
+git config --global user.name "neelu" (creates username)
+git config --globl user.email "neelu@gmail.com" creates a mail id)
+
+git config --list (shows the list of username, email)
+
+PHASES:
+1. workspace
+2. Staging/Index
+3. Local repo
+=================================================================
+## commands to move files from workspace to staging to local repo ##
+
+touch file1      ( creates a file named file1)
+ls               ( lists all files )
+git status       (shows the files present in Workspace - indicates in RED          clr(untracked files)
+git add file1    ( to add file1 in staging/index area )
+git status       (displays the files present in staging area- green clr, changes to be commited)
+git commit -m "label" file1 (moves files from staging area to local repo)
+git status       ( no files located in workspace and staging)
+git log          (displays the commit id)
+git show cid     ( displays the files in commit)
+=====================================================================
+## commands to move multiple files from workspace to staging to local repo ##
+
+touch file2 file3 file4 file5
+git status
+git add file2 file4
+or
+git add*
+or
+git add .
+or
+git add -A
+git status
+git commit -m "label"
+===========================================================================
+## commands to modify if we want from staging to workspace or local to workspace ##
+
+git reset --soft cid (local to staging)
+git reset HEAD file-name (staging to workspace)
+git reset --mixed cid (local to workspace)
+
+git commit -m "label" file (workspace to local repo- only modified files)
+===========================================================================
+## command to download central repo to local machine
+
+git clone https://github.com/neelunagella/batch59.git ( downloads the central repo) clone- colour xerox of another copy
+cd batch59
